@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Home</title>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://bootswatch.com/cosmo/bootstrap.min.css">
+	<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.2.4.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<link rel="stylesheet" href="/stylesheets/sparkle.css">
+	<script src="/javascripts/module.js"></script>
+	<script src="/javascripts/services.js"></script>
+	<script src="/javascripts/controllers.js"></script>
+	<script src="/javascripts/game.js"></script>
+</head>
+
+<body ng-app="zazzCardApp">
+	<div class="jumbotron">
+		<div class="btn-group">
+			<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="fa fa-bars"></i></span>
+			</button>
+			<ul class="dropdown-menu">
+				<li><a ui-sref="home">ZazzCards Home</a></li>
+				<li role="separator" class="divider"></li>
+				<li><a ui-sref="list">Edit My ZazzCards</a></li>
+			</ul>
+		</div>
+		<!-- Single button -->
+		
+
+			<h1>✨<span>TwoDopeTravelers</span>✨</h1>
+			<div>Explore<span>America</span></div>
+		</div>
+	</div>
+	<ui-view></ui-view>
+</body>
+
+</html>
