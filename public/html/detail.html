@@ -27,9 +27,9 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<!-- <th>Number</th> -->
-						<th>Deescription</th>
+						<!-- <th>Description</th> -->
 						<th>Note</th>
+						<th>Location ID</th>
 						<th>Edit</th>
 						<th>Remove</th>
 					</tr>
@@ -37,8 +37,9 @@
 
 				<tbody>
 					<tr ng-repeat="note in notes">
-						<td>{{place.description}}</td>
+						<!-- <td>{{place.description}}</td> -->
 						<td>{{note.comment}}</td>
+						<td>{{note.place_id}}</td>
 						<td>
 							<button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit-card-modal" ng-click='editNote(note)'><i class="fa fa-pencil-square-o"></i></button>
 						</td>
@@ -53,12 +54,13 @@
 					</tr>
 					<tr>
 						<td>
-							<textarea ng-model="note" id="" cols="30" rows="10">
+							<textarea required ng-model="note" id="" cols="30" rows="10">
 								
 							</textarea>
+							<p style="color: red" ng-if="!note.length">Note can't be empty</p>
 						</td>
 						<td>
-							<button class="btn btn-success btn-sm" data-target="#edit-card-modal" ng-click='addNote(note)'><i class="fa fa-plus"></i></button>
+							<button class="btn btn-success btn-sm" data-target="#edit-card-modal" ng-click='addNote(note)' ng-if="note.length"><i class="fa fa-plus"></i></button>
 						</td>
 					</tr>
 				</tbody>

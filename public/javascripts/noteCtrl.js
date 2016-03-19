@@ -56,12 +56,10 @@ $scope.init();
 		// console.log("note: ", note)
 		noteFactory.remove(note)
 		.then(function(note) {
-			noteFactory.fetch().then(function(res) {
-				$scope.notes = res.data;
-			}, function(err) {
-				console.error('err: ', err);
-			});
-
+			
+				// $scope.notes = res.data;
+			  $scope.init();
+			
 		}, function(err) {
 			console.error(err)
 		});

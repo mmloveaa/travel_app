@@ -34,7 +34,7 @@ app.factory('noteFactory', function ($http) {
 			console.log(selectedNote)
 			var url = `/detail/${selectedNote}`;
 			console.log(url)
-			return $http.delete(url);		//	promise
+			return $http.delete(`/detail/${selectedNote}`);		//	promise
 		},
 		update:	function(note) {
 			var url = `/detail/${note.note_id}`;

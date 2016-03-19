@@ -6,6 +6,7 @@ var connection = require('../config/db');
 
 router.get('/', function (req, res, next) {
 	var query = "SELECT place_id,comment,note_id FROM notes";
+	// var query = "SELECT place_id,description FROM destinations";
 	// console.log("before format query: ",query)
 	query = db.format(query);
 	// console.log("after format  query: ",query)
@@ -26,7 +27,7 @@ router.get('/:place_id', function (req, res, next) {
 	query = db.format(query);
 
 	connection.query(query, function (err, note) {
-		console.log("add note")
+		// console.log("add note")
 		if(err) {
 			res.status(400).send(err);
 			return;
@@ -72,10 +73,11 @@ router.delete('/:note_id', function(req, res) {
 
 	// SET is the values
 	var noteID = req.params.note_id;
-	console.log(req.params)
+	// console.log(req.params)
 
 	connection.query('DELETE FROM notes WHERE note_id=' + noteID, req.body, function (err, result) {
 		if(err) {
+			console.log("error: ", err)
 			res.status(400).send(err);
 			return;
 		}
