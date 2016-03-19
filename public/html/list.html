@@ -9,10 +9,13 @@
 					<div class="modal-body">
 						<label class='control-label'>Location</label>
 						<input required placeholder='Location' ng-model='newPlace.location' class='input form-control'>
+						<p style="color: red" ng-if="!newPlace.location">Location field cannot be empty</p>
 						<label class='control-label'>Description</label>
 						<input required placeholder='Desciption' ng-model='newPlace.description' class='input form-control'>
+						<p style="color: red" ng-if="!newPlace.description">Description field cannot be empty</p>
 						<label class='control-label'>Image</label>
 						<input required type="url" placeholder='URL' ng-model='newPlace.image' class='input form-control'>
+						<p style="color: red" ng-if="!newPlace.image">Don't forget to put an image</p>
 					</div>
 				</form>
 				<div class="modal-footer">
@@ -46,28 +49,6 @@
 			</div>
 		</div>
 	</div>
-
-
-	<!-- <div class="modal fade" id="new-card-modal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="new-worker-title">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" ng-click='cancelEditing()' data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="new-card-title">New Destination</h4>
-				</div>
-				<form id="addNotesForm">
-					<div class="modal-body">
-						<label class='control-label'>Notes / Activities</label>
-						<textarea required placeholder='Notes' ng-model='place.comment' class='input form-control'></textarea>
-					</div>
-				</form>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" ng-click='cancelEditing()' data-dismiss="modal">Cancel</button>
-					<button form='newworkerform' type="button" class="btn btn-info" ng-click=''>Submit</button>
-				</div>
-			</div>
-		</div>
-	</div> -->
 
 <div class='container first-row'>
 		<button class='btn btn-sm btn-info edit' data-toggle='modal' data-target='#new-card-modal'><i class="fa fa-plus-circle"></i></button>
