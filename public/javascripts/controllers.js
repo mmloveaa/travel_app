@@ -2,7 +2,7 @@
 
 var app = angular.module('travelApp');
 
-app.controller('listCtrl', function ($scope, ListFactory) {
+app.controller('listCtrl', function ($scope, ListFactory, $state) {
 
 	if (!$scope.newPlace) $scope.newPlace = {}
 
@@ -37,10 +37,8 @@ app.controller('listCtrl', function ($scope, ListFactory) {
 	}
 
 	$scope.commitEdit = function(place) {
-		place.placeID = $scope.placeEd.placeID;
-		console.log("card: ",card)
 		ListFactory.update(place).then(function() {
-			$scope.places.splice($scope.places.findIndex(e => e.placeID === place.placeID), 1, angular.copy(place));
+			$scope.places.splice($scope.places.findIndex(e => e.place_id === place.place_id), 1, angular.copy(place));
 			$scope.place = undefined;
 			$('#edit-card-modal').modal('hide');
 		});
@@ -63,9 +61,9 @@ app.controller('listCtrl', function ($scope, ListFactory) {
 	}
 
 
-  // $scope.clickNote = function(place){
-  // 	<a ui-sref="detail">
-  // }
+  $scope.goToDetail = function(id){
+  	$state.go("detail" , {"id": id})
+  }
 
 
 

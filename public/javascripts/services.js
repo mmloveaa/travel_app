@@ -14,9 +14,32 @@ app.factory('ListFactory', function ($http) {
 			var url = `/list/${selectedPlace}`;
 			return $http.delete(url);		//	promise
 		},
-		update:	function(selectedPlace) {
-			var url = `/list/${selectedPlace}`;
-			return $http.put(url);
+		update:	function(place) {
+			var url = `/list/${place.place_id}`;
+			return $http.put(url, place);
 		}
 	}
 });
+
+
+app.factory('noteFactory', function ($http) {
+	return {
+		fetch: 	function(id) {
+			return $http.get(`/detail/${id}`);
+		},
+		create:	function(newNote) {
+			return $http.post('/detail',newNote);
+		},
+		remove:	function(selectedNote) {
+			console.log(selectedNote)
+			var url = `/detail/${selectedNote}`;
+			console.log(url)
+			return $http.delete(url);		//	promise
+		},
+		update:	function(note) {
+			var url = `/detail/${note.note_id}`;
+			return $http.put(url, note);
+		}
+	}
+});
+
