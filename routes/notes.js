@@ -68,11 +68,11 @@ router.post('/', function(req, res) {
 });
 
 
-router.delete('/:note_id', function(req, res) {
+router.delete('/:id', function(req, res) {
 	console.log('req.body: ', req.body);
 
 	// SET is the values
-	var noteID = req.params.note_id;
+	var noteID = req.params.id;
 	// console.log(req.params)
 
 	connection.query('DELETE FROM notes WHERE note_id=' + noteID, req.body, function (err, result) {

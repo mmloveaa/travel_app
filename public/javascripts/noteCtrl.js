@@ -34,6 +34,7 @@ $scope.init();
 
 	$scope.editNote = function(note) {
 		$scope.listEd = angular.copy(note);
+		console.log("listEd: ",listEd)
 	}
 
 	$scope.cancelEditing = function() {
@@ -52,9 +53,9 @@ $scope.init();
 	}
 
 
-	$scope.removeNote = function(note) {
+	$scope.removeNote = function(id) {
 		// console.log("note: ", note)
-		noteFactory.remove(note)
+		noteFactory.remove(id)
 		.then(function(note) {
 			
 				// $scope.notes = res.data;

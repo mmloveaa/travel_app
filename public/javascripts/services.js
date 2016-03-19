@@ -30,11 +30,11 @@ app.factory('noteFactory', function ($http) {
 		create:	function(newNote) {
 			return $http.post('/detail',newNote);
 		},
-		remove:	function(selectedNote) {
-			console.log(selectedNote)
-			var url = `/detail/${selectedNote}`;
+		remove:	function(id) {
+			// console.log(selectedNote)
+			var url = `/detail/${id}`;
 			console.log(url)
-			return $http.delete(`/detail/${selectedNote}`);		//	promise
+			return $http.delete(`/detail/${id}`);		//	promise
 		},
 		update:	function(note) {
 			var url = `/detail/${note.note_id}`;
