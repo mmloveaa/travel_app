@@ -28,6 +28,7 @@
 				<thead>
 					<tr>
 						<!-- <th>Number</th> -->
+						<th>Deescription</th>
 						<th>Note</th>
 						<th>Edit</th>
 						<th>Remove</th>
@@ -36,7 +37,7 @@
 
 				<tbody>
 					<tr ng-repeat="note in notes">
-
+						<td>{{place.description}}</td>
 						<td>{{note.comment}}</td>
 						<td>
 							<button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#edit-card-modal" ng-click='editNote(note)'><i class="fa fa-pencil-square-o"></i></button>

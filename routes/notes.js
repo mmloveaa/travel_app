@@ -76,7 +76,7 @@ router.delete('/:note_id', function(req, res) {
 
 	connection.query('DELETE FROM notes WHERE note_id=' + noteID, req.body, function (err, result) {
 		if(err) {
-			res.status(455).send(err);
+			res.status(400).send(err);
 			return;
 		}
 

@@ -8,7 +8,7 @@ app.controller('noteCtrl', function ($scope, $state, noteFactory) {
 $scope.init = function () {
 	noteFactory.fetch($state.params.id).then(function (res) {
 		$scope.notes = res.data;
-		console.log("$scope notes: ", $scope.notes)
+		// console.log("$scope notes: ", $scope.notes)
 	}, function(err) {
 		console.log('err: ',err);
 	});
@@ -42,7 +42,7 @@ $scope.init();
 	}
 
 	$scope.commitEdit = function(note) {
-		console.log("note: ", note)
+		// console.log("note: ", note)
 		noteFactory.update(note).then(function() {
 			$scope.notes.splice($scope.notes.findIndex(e => e.note_id === note.note_id), 1, angular.copy(note));
 			$scope.note = undefined;
@@ -52,8 +52,8 @@ $scope.init();
 	}
 
 
-	$scope.removeNote = function(note,note_id) {
-		console.log("note: ", note)
+	$scope.removeNote = function(note) {
+		// console.log("note: ", note)
 		noteFactory.remove(note)
 		.then(function(note) {
 			noteFactory.fetch().then(function(res) {
