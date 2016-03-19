@@ -63,7 +63,8 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(PORT, function() {
-  console.log(`Server listening on port ${PORT}`);
-});
-// module.exports = app;
+// app.listen(PORT, function() {
+//   console.log(`Server listening on port ${PORT}`);
+// });
+
+module.exports = app;
