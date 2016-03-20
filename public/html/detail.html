@@ -54,13 +54,13 @@
 					</tr>
 					<tr>
 						<td>
-							<textarea required ng-model="note" id="" cols="30" rows="10">
+							<textarea required ng-model="comment" id="" cols="30" rows="10">
 								
 							</textarea>
-							<p style="color: red" ng-if="!note.length">Notes cannot be empty</p>
+							<p style="color: red" ng-if="!comment.length">Notes cannot be empty</p>
 						</td>
 						<td>
-							<button class="btn btn-success btn-sm" data-target="#edit-card-modal" ng-click='addNote(note)' ng-if="note.length"><i class="fa fa-plus"></i></button>
+							<button class="btn btn-success btn-sm" data-target="#edit-card-modal" ng-click='addNote(comment)' ng-if="comment.length"><i class="fa fa-plus"></i></button>
 						</td>
 					</tr>
 				</tbody>

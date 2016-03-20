@@ -92,6 +92,7 @@ router.put('/:note_id', function(req, res) {
 
 	// SET is the values
 	var noteID = req.params.note_id;
+	console.log("")
 	connection.query('UPDATE notes SET ? where note_id=' + noteID, req.body, function (err, result) {
 		if(err) {
 			res.status(400).send(err);

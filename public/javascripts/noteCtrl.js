@@ -16,8 +16,14 @@ $scope.init = function () {
 }
 		
 $scope.init();
+
+// $scope.reset = function() {
+//         $scope.comment = '';
+//         console.log("reset is running")
+//     };
 		
 	$scope.addNote = function(newNote) {
+
 		// console.log('newNote: ', newNote);
 		var note = {};
 		note.comment = newNote;
@@ -25,6 +31,8 @@ $scope.init();
 		noteFactory.create(note).then(function(res) {
 
 			$scope.init();
+			$scope.comment = " ";
+			// $scope.reset();
 
 		}, function(err) {
 			console.error('err: ', err);
@@ -34,7 +42,7 @@ $scope.init();
 
 	$scope.editNote = function(note) {
 		$scope.listEd = angular.copy(note);
-		console.log("listEd: ",listEd)
+		console.log("scope listed: ", $scope.listEd)
 	}
 
 	$scope.cancelEditing = function() {
@@ -42,12 +50,12 @@ $scope.init();
 		$scope.newNote=undefined;
 	}
 
+
 	$scope.commitEdit = function(note) {
-		// console.log("note: ", note)
+		console.log("note: ", note)
 		noteFactory.update(note).then(function() {
 			$scope.notes.splice($scope.notes.findIndex(e => e.note_id === note.note_id), 1, angular.copy(note));
-			$scope.note = undefined;
-			$scope.note="";
+
 			$('#edit-card-modal').modal('hide');
 		});
 	}
